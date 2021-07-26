@@ -1,0 +1,7 @@
+fastapi
+mongoengine
+SQLAlchemy
+mysql-connector
+Flask
+Flask-JWT-Extended
+dotenv
