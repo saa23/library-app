@@ -10,7 +10,7 @@ def showUsers():
 
 @app.route("/user", methods=['GET'])
 def showUser():
-    params = request.json
+    params = request.json  ### accessing the JSON data in the request body, returns a dict
     return customers_controller.show(**params)
 
 @app.route("/user/insert", methods=["POST"])

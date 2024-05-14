@@ -12,10 +12,15 @@ class database:
         user = Config.USER
         password = Config.PW
         port = Config.PORT
-        engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}', echo= False)
+        # engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}', echo= False)
+        
+        
+        ### pymysql connector supports for "caching_sha2_password"
+        engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}', echo= False)
         Session = sessionmaker(bind=engine)
         self.session = Session()
-
+ 
+        
 class customers(Base):
     __tablename__ = 'customers'
     userid = Column(Integer, primary_key=True)
