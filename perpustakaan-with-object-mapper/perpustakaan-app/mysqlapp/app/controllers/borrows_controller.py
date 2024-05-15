@@ -9,7 +9,11 @@ cust_db = cust_db()
 
 @jwt_required()
 def shows():
-    # getting the payload from token
+    """
+    In this process, token is required considered the security
+    Thus, getting the payload from token
+    """
+
     params = get_jwt_identity()
     dbresult = mysqldb.showBorrowByEmail(**params)
     result = []
@@ -34,7 +38,12 @@ def shows():
 
 
 @jwt_required()
-def insert(**params):
+def inserts(**params):
+    """
+    In this process, token is required considered the security
+    Thus, getting the payload from token
+    """
+
     token = get_jwt_identity()
     userId = cust_db.showUserByEmail(**token)[0]
     borrowdate = datetime.datetime.now().isoformat()
@@ -52,10 +61,15 @@ def insert(**params):
   
 @jwt_required()
 def changeStatus(**params):
+    """
+    In this process, token is required considered the security
+    Thus, getting the payload from token
+    """
+
     mysqldb.updateBorrow(**params)
     mysqldb.dataCommit()
     return jsonify({'message' : 'Success'})
 
 def getBookById(data):
-    book_data = requests.get(url="http://localhost:8000/bookbyid", json=data)
+    book_data = requests.get(url="http://localhost:8000/bookbyid", json=data)   ### url from books_router (managed using FastAPI and MongoDB)
     return json.loads(book_data.text)[0]

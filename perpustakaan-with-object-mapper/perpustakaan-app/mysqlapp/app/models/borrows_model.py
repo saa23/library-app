@@ -73,6 +73,7 @@ class database:
 # class database:
 #     def __init__(self):
 #         engine = create_engine('mysql+mysqlconnector://root:12345@localhost:3306/perpustakaan_project', echo= False)
+#         engine = create_engine('mysql+pymysql://root:12345@localhost:3306/perpustakaan_project', echo= False)
 #         Session = sessionmaker(bind=engine)
 #         self.session = Session()
 

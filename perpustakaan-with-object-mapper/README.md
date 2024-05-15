@@ -16,7 +16,7 @@ For this exercise project, very important to have installed both DB below:
 
 Here, used two libraries to generate API:
 - Flask
-- FastApi
+- FastApiw
 
 # 4. Project Flow
 <img src="./images/erd-with-flow.jpg" alt="the concept" widht="500" height="450"/>

@@ -189,3 +189,5 @@ pyrightconfig.json
 
 *.ppt
 *.pptx
+notes/
+test.py

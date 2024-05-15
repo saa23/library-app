@@ -1,5 +1,5 @@
 -- user database
-CREATE TABLE perpustakaan_project.customers (
+CREATE TABLE perpustakaan.customers (
     userid INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
     firstname VARCHAR(100) NOT NULL,
@@ -9,14 +9,14 @@ CREATE TABLE perpustakaan_project.customers (
 );
 
 -- inserting the user data
-INSERT INTO perpustakaan_project.customers(username,firstname,lastname,email) 
+INSERT INTO perpustakaan.customers(username,firstname,lastname,email) 
 VALUES  ("userpertama","rudi","roundhouse","rudi.roundhouse@gmail.com"),
         ("userkedua","shiroe","ishigami","shiroe.ishigami@gmail.com"),
         ("userketiga","akatsuki","horizon","akatsuki.horizon@gmail.com");
 
 
 -- transaction (borrow) database
-CREATE TABLE perpustakaan_project.borrows (
+CREATE TABLE perpustakaan.borrows (
     borrowid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     borrowdate DATETIME NOT NULL,
     userid INT NOT NULL,
@@ -26,5 +26,5 @@ CREATE TABLE perpustakaan_project.borrows (
     INDEX userid_idx (userid ASC) VISIBLE,
     CONSTRAINT userid
     FOREIGN KEY (userid)
-    REFERENCES perpustakaan_project.customers(userid)
+    REFERENCES perpustakaan.customers(userid)
     );

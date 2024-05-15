@@ -11,7 +11,7 @@ def showBorrows():
 @app.route("/borrows/insert", methods=["POST"])
 def insertBorrows():
     params = request.json
-    return borrows_controller.insert(**params)
+    return borrows_controller.inserts(**params)
 
 @app.route("/borrows/status", methods=["POST"])
 def updateStatus():
