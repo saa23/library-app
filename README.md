@@ -1,4 +1,4 @@
-# mongodbapp
+# Library-App
 
 
 # 1. Introduction
@@ -86,7 +86,7 @@ While to access the `borrows` tables we set the microservice security layer by a
 ```
 
 ## 4.2. How to run the apps
-### 4.2.1. Run webserver of FastAPI
+### 4.2.1. Run webserver FastAPI
 First, need to run the FastAPI, since it the API for `books` data will be consumed by `borrows` (Flask)
 
 Here is the format to execute FastAPI
@@ -99,7 +99,7 @@ That means here is the command for the project
 uvicorn main:app --port 8000 --reload
 ```
 
-### 4.2.2. Run webserver of Flask
+### 4.2.2. Run webserver Flask
 
 
 
