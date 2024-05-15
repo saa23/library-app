@@ -4,7 +4,7 @@ from books_controller import *
 router = APIRouter()
 
 @router.get("/books")
-async def view_search_books_by_name():
+async def view_books():
     result = showBooks()
     return result
 
@@ -17,6 +17,12 @@ async def view_search_books_id(params:dict):
 async def view_search_books_by_name(params:dict):
     result = showBookByName(**params) 
     return result
+
+@router.post("/insertbook")
+async def insert_book(params:dict):
+    insertBook(**params)
+    return {'message':'insert a document successfully!'}
+
 
 @router.post("/updatebyid")
 async def update_books_id(params:dict):

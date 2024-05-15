@@ -48,7 +48,7 @@ def inserts(**params):
     """
     try:
         db.session.add(customers(**params))
-        db.session.commit() 
+        db.session.commit()
         return jsonify({"message" : "Inserting Success!"})
     except exc.IntegrityError as e: 
         # anticipating if inserting existing data in db

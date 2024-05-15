@@ -53,3 +53,6 @@ def deleteBookById(**params):
     delete a document based on given book id
     """
     books(id= params['id']).delete()
+
+# res = showBooks()
+insertBook(name="To Kill a Mockingbird", author="Harper Lee", releaseyear= "1960", genre="Fiction")
