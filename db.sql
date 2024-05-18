@@ -10,9 +10,9 @@ CREATE TABLE perpustakaan.customers (
 
 -- inserting the user data
 INSERT INTO perpustakaan.customers(username,firstname,lastname,email) 
-VALUES  ("userpertama","rudi","roundhouse","rudi.roundhouse@gmail.com"),
-        ("userkedua","shiroe","ishigami","shiroe.ishigami@gmail.com"),
-        ("userketiga","akatsuki","horizon","akatsuki.horizon@gmail.com");
+VALUES  ("usersatu","hanamichi","sakuragi","hanamichi.sakuragi@gmail.com"),
+        ("userdua","ryouta","miyagi","ryouta.miyagi@gmail.com"),
+        ("usertiga","hisashi","mitsu","hisashi.mitsui@gmail.com");
 
 
 -- transaction (borrow) database

@@ -53,3 +53,4 @@ def deleteBookById(**params):
     delete a document based on given book id
     """
     books(id= params['id']).delete()
+    print('successfully deleted a document!')

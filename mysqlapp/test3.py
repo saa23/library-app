@@ -1,19 +1,36 @@
-from mysql.connector import connect
+import mysql.connector
+
+# from mysql.connector import connect
 from config import Config
 
 class database:
     def __init__(self):
         try:
-            self.db = connect(
+            self.db = mysql.connector.connect(
                 host= Config.HOST,
                 database= Config.DB, 
                 user= Config.USER,
                 password= Config.PW
             )
+
+        # host = Config.HOST
+        # database = Config.DB
+        # user = Config.USER
+        # password = Config.PW
+        # port = Config.PORT
+        # # engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}', echo= False)
+        
+        
+        # ### pymysql connector supports for "caching_sha2_password"
+        # engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}', echo= False)
+        # Session = sessionmaker(bind=engine)
+
+            print('Connected successfully')
         except Exception as e:
             print(e)
 
     def showBorrowByEmail(self, **params):
+        print(params['email'])
         cursor = self.db.cursor()
         query = '''
         SELECT
@@ -33,6 +50,7 @@ class database:
         INSERT INTO borrows({0})
         VALUES {1};
         '''.format(column, values)
+        print(query)
         cursor = self.db.cursor()
         cursor.execute(query)
 
@@ -76,3 +94,7 @@ class database:
 #     isactive = Column(TINYINT)
 #     Index(userid)
 #     Constraint(userid)
+
+
+dd = database()
+# dd.showBorrowByEmail(email="shiroe.ishigami@gmail.com")

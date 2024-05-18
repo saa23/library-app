@@ -55,4 +55,8 @@ def deleteBookById(**params):
     books(id= params['id']).delete()
 
 # res = showBooks()
-insertBook(name="To Kill a Mockingbird", author="Harper Lee", releaseyear= "1960", genre="Fiction")
+# insertBook(name="To Kill a Mockingbird", author="Harper Lee", releaseyear= "1960", genre="Fiction")
+
+
+res = showBookByName(name = "To Kill a Mockingbird")
+print(res)

@@ -14,12 +14,25 @@ For this exercise project, very important to have installed both DB below:
 - MySQL
 - MongoDB
 
+
 Here, used two libraries to generate API:
 - Flask
 - FastApi
 
+Besides, other required libraries as following:
+- PyMySQL
+- SQLAlchemy
+- Mongoengine
+- Flask-JWT-Extended
+
+
 # 4. Project Flow
-<img src="./images/erd-with-flow.jpg" alt="the concept" widht="500" height="450"/>
+
+<img src="./images/flow-diagram.png" alt="the concept" widht="400" height="300"/>
+
+To be specific here is the ERD in diagram:
+
+<img src="./images/erd-with-flow.jpg" alt="the concept" widht="400" height="300"/>
 
 Shown in the figure, there are two blocks based on the component frameworks:
 - **MySQL + Flask** (using SQLAlchemy as the ORM)
@@ -98,6 +111,10 @@ That means here is the command for the project
 ```
 uvicorn main:app --port 8000 --reload
 ```
+If run locally, the webserver will be running on `http://127.0.0.1:8000`.
+To view the API docs go to `http://127.0.0.1:8000/docs` on the browser.
+![fastapi-api-docs](./images/fastapi-api-docs.png
+)
 
 ### 4.2.2. Run webserver Flask
 

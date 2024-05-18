@@ -35,6 +35,17 @@ def show(**params):
     return jsonify(result)
 
 
+def showUserByEmail(**params):
+# def showUserByEmail(**params):
+    """
+    show only one data customer basea on a given email
+    """
+    # resultdb = db.session.query(customers).filter(customers.email == email).one()
+    resultdb = db.session.query(customers).filter(customers.email == params['email']).one()
+    result = row2dict(resultdb)
+    return jsonify(result)
+
+
 def inserts(**params):
     """
     Insert new record.
@@ -43,6 +54,14 @@ def inserts(**params):
     2. firstname
     3. lastname
     4. email
+
+    template format body request
+    {
+    "username":"",
+    "firstname":"",
+    "lastname":"",
+    "email":""
+    }
 
     If inserting an existing data, will be rollback thus reverting last commit records.
     """
@@ -53,13 +72,21 @@ def inserts(**params):
     except exc.IntegrityError as e: 
         # anticipating if inserting existing data in db
         db.session.rollback()
-        print()
         return jsonify({"error data already exist in database" : "{}".format(e)})
 
 
 def updates(**params):
     """
     update one record based on given userid then update using other key in params argument
+    
+    template format body request
+    {
+    "userid":"",
+    "username":"",
+    "firstname":"",
+    "lastname":"",
+    "email":""
+    }
     """
     query_result = db.session.query(customers).filter(customers.userid == params['userid'])
     query_result.update(params)

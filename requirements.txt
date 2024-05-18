@@ -1,8 +1,10 @@
 fastapi
 mongoengine
 SQLAlchemy
-mysql-connector
+# mysql-connector
+mysql-connector-python
 Flask
 Flask-JWT-Extended
 python-dotenv
-pymysql
+PyMySQL[rsa]
+requests
