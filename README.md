@@ -59,8 +59,6 @@ While to access the `borrows` tables we set the microservice security layer by a
   
   ├── images\
 
-  ├── perpustakaan-app\
-
   ├── mongodbapp\
     ├── __init__.py
     ├── config.py
@@ -96,7 +94,7 @@ While to access the `borrows` tables we set the microservice security layer by a
 ```
 
 ## 4.2. How to run the apps
-### 4.2.1. Run webserver FastAPI
+### 4.2.1. Run server FastAPI
 Need to run the FastAPI, since it the API for `books` data will be consumed by `borrows` (Flask).
 
 First of all, go to `mongodbapp\` folder.
@@ -110,12 +108,12 @@ That means here is the command for the project
 ```
 uvicorn main:app --port 8000 --reload
 ```
-If run locally, the webserver will be running on `http://127.0.0.1:8000`.
+If run locally, the server will be running on `http://127.0.0.1:8000`.
 To view the API docs go to `http://127.0.0.1:8000/docs` on the browser.
 ![fastapi-api-docs](./images/fastapi-api-docs.png
 )
 
-### 4.2.2. Run webserver Flask
+### 4.2.2. Run server Flask
 After FastAPI server has been started, open another terminal windows. Next, go to `mysqlapp\` folder.
 
 Subsequently, run the Flask server, by simply using format command
@@ -127,6 +125,7 @@ That means, here is the command for the project
 ```
 python main.py
 ```
+If run locally, by default Flask server will be run on port 5000. Thus the server will be running on `http://127.0.0.1:5000`
 
 
 # 5. Output
