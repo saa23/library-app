@@ -129,6 +129,35 @@ If run locally, by default Flask server will be run on port 5000. Thus the serve
 
 
 # 5. Output
+Postman can be used to test routers API.
+Here are some results of router API testing:
+
+### 1. GET `/books`
+<img src="./images/get-books.png" alt="get-books" widht="400" height="300"/>
+
+### 2. GET `/bookbyname`
+<img src="./images/get-bookbyname.png" alt="get-bookbyname" widht="400" height="300"/>
+
+### 3. POST `/insertbook`
+<img src="./images/post-insertbook.png" alt="post-insertbook" widht="400" height="300"/>
+
+### 4. GET `/users`
+<img src="./images/get-users.png" alt="get-users" widht="400" height="300"/>
+
+### 5. GET `/requesttoken`
+<img src="./images/get-requesttoken.png" alt="get-requesttoken" widht="400" height="300"/>
+
+For user to accessing data in table `borrows` need to input the token from JWT (obtained from router */requesttoken*).
+
+Go to tab `Authorization`. Select the auth type `Bearer Token`, then input the token in the provided text box.
+
+<img src="./images/bearer-token.png" alt="bearer-token" widht="400" height="300"/>
+
+### 6. GET `/borrows`
+<img src="./images/get-borrows.png" alt="get-borrows" widht="400" height="300"/>
+
+### 6. POST `/borrows/insert`
+<img src="./images/post-borrows-insert.png" alt="post-borrows-insert" widht="400" height="300"/>
 
 
 # Appendix
