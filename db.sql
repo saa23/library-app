@@ -12,7 +12,7 @@ CREATE TABLE perpustakaan.customers (
 INSERT INTO perpustakaan.customers(username,firstname,lastname,email) 
 VALUES  ("usersatu","hanamichi","sakuragi","hanamichi.sakuragi@gmail.com"),
         ("userdua","ryouta","miyagi","ryouta.miyagi@gmail.com"),
-        ("usertiga","hisashi","mitsu","hisashi.mitsui@gmail.com");
+        ("usertiga","hisashi","mitsui","hisashi.mitsui@gmail.com");
 
 
 -- transaction (borrow) database

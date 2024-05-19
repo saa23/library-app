@@ -30,7 +30,7 @@ Besides, other required libraries as following:
 
 <img src="./images/flow-diagram.png" alt="the concept" widht="400" height="300"/>
 
-To be specific here is the ERD in diagram:
+To be specific here is the ERD:
 
 <img src="./images/erd-with-flow.jpg" alt="the concept" widht="400" height="300"/>
 
@@ -48,61 +48,60 @@ While to access the `borrows` tables we set the microservice security layer by a
 
 ## 4.1. Project Structure
 ```
-├──  perpustakaan-project\
+├──  library-app\
 
   ├── venv\ (the virtual environment in gitignore list)
 
   ├── .gitignore
   ├── README.md
   ├── requirements.txt
-  ├── db.sql
-  ├── sample_request_token.txt
+  ├── db.sql (query to CREATE and INSERT of table `customers` and CREATE of `borrows`)
   
   ├── images\
 
   ├── perpustakaan-app\
 
-    ├── mongodbapp\
-      ├── .env
+  ├── mongodbapp\
+    ├── __init__.py
+    ├── config.py
+    ├── main.py
+    ├── books_controller.py
+    ├── books_router.py
+
+    ├── models\
       ├── __init__.py
-      ├── config.py
-      ├── main.py
-      ├── books_controller.py
-      ├── books_router.py
+      ├── books_model.py
+
+  ├── mysqlapp\
+    ├── config.py
+    ├── main.py
+
+    ├── app\
+      ├── __init__.py
 
       ├── models\
         ├── __init__.py
-        ├── books_model.py
+        ├── borrows_model.py
+        ├── customers_model.py
 
-    ├── mysqlapp\
-      ├── .env
-      ├── config.py
-      ├── main.py
-
-      ├── app\
+      ├── controllers\
         ├── __init__.py
+        ├── borrows_controller.py
+        ├── customers_controller.py
 
-        ├── models\
-          ├── __init__.py
-          ├── borrows_model.py
-          ├── customers_model.py
-
-        ├── controllers\
-          ├── __init__.py
-          ├── borrows_controller.py
-          ├── customers_controller.py
-
-        ├── routers\
-          ├── __init__.py
-          ├── borrows_router.py
-          ├── customers_router.py
+      ├── routers\
+        ├── __init__.py
+        ├── borrows_router.py
+        ├── customers_router.py
 ```
 
 ## 4.2. How to run the apps
 ### 4.2.1. Run webserver FastAPI
-First, need to run the FastAPI, since it the API for `books` data will be consumed by `borrows` (Flask)
+Need to run the FastAPI, since it the API for `books` data will be consumed by `borrows` (Flask).
 
-Here is the format to execute FastAPI
+First of all, go to `mongodbapp\` folder.
+
+Then, here is the format to execute FastAPI
 ```
 uvicorn {module name}:{FastAPI instance name} --port {any port available} --reload
 ```
@@ -117,7 +116,17 @@ To view the API docs go to `http://127.0.0.1:8000/docs` on the browser.
 )
 
 ### 4.2.2. Run webserver Flask
+After FastAPI server has been started, open another terminal windows. Next, go to `mysqlapp\` folder.
 
+Subsequently, run the Flask server, by simply using format command
+```
+python {python file containing Flask instance}
+```
+
+That means, here is the command for the project
+```
+python main.py
+```
 
 
 # 5. Output
